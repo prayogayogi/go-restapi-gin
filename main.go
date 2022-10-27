@@ -7,13 +7,13 @@ import (
 )
 
 func main() {
-	r := gin.Default()
+	route := gin.Default()
 	models.ConnectDatabase()
 
-	r.GET("/orders", ordercontroller.Index)
-	r.POST("/orders", ordercontroller.Create)
-	r.PUT("/orders/:orderid", ordercontroller.Update)
-	r.DELETE("/orders/:orderid", ordercontroller.Delete)
+	route.GET("/orders", ordercontroller.Index)
+	route.POST("/orders", ordercontroller.Create)
+	route.PUT("/orders/:orderid", ordercontroller.Update)
+	route.DELETE("/orders/:orderid", ordercontroller.Delete)
 	
-	r.Run()
+	route.Run()
 }
